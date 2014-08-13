@@ -211,7 +211,7 @@ devise.provider('Auth', function AuthProvider() {
              */
             register: function(creds) {
                 creds = creds || {};
-                return $http(httpConfig('register', {user: creds}))
+                return $http(httpConfig('register', creds))
                     .then(service.parse)
                     .then(save)
                     .then(broadcast('new-registration'));

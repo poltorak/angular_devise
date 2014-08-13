@@ -155,7 +155,7 @@ devise.provider('Auth', function AuthProvider() {
                     loggedIn = service.isAuthenticated();
 
                 creds = creds || {};
-                return $http(httpConfig('login', {user: creds}))
+                return $http(httpConfig('login', creds))
                     .then(service.parse)
                     .then(save)
                     .then(function(user) {
